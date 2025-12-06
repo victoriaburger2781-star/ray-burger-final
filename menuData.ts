@@ -4,7 +4,6 @@
 // Puedes agregar o quitar los que quieras.
 export const WHATSAPP_NUMBERS = [ 
   "584162101833", 
-  "584243439729"
 ];
 
 // 2. ESPECIAL DE LA SEMANA
