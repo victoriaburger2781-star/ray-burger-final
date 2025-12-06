@@ -2,8 +2,7 @@
 
 // 1. TUS NÚMEROS DE WHATSAPP
 // Puedes agregar o quitar los que quieras.
-export const WHATSAPP_NUMBERS = [
-  "584128344594", 
+export const WHATSAPP_NUMBERS = [ 
   "584162101833", 
   "584243439729"
 ];
