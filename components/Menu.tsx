@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Star, ShoppingBag, Clock, Sparkles, Plus, Minus, ShoppingCart, X } from 'lucide-react';
 import { CartItem } from '../types';
-// IMPORTAMOS TUS DATOS
 import { WHATSAPP_NUMBERS, WEEKLY_SPECIAL, MENU_ITEMS, CATEGORIES } from '../data/menuData';
 
 interface MenuProps {
@@ -19,7 +18,7 @@ const Menu: React.FC<MenuProps> = ({ cart, addToCart, removeFromCart, updateQuan
     ? MENU_ITEMS 
     : MENU_ITEMS.filter(item => item.category === activeCategory);
 
-  const parsePrice = (priceStr: string) => parseInt(priceStr.replace(/[^0-9]/g, '')) || 0;
+  const parsePrice = (priceStr: string) => parseFloat(priceStr.replace(/[^0-9.]/g, '')) || 0;
   const totalPrice = cart.reduce((sum, item) => sum + (parsePrice(item.price) * item.quantity), 0);
 
   const handleCheckout = () => {
@@ -29,7 +28,7 @@ const Menu: React.FC<MenuProps> = ({ cart, addToCart, removeFromCart, updateQuan
     cart.forEach(item => {
         message += `▪️ ${item.quantity}x ${item.name} (${item.price})\n`;
     });
-    message += `\n💰 *Total Estimado: $${totalPrice}*`;
+    message += `\n💰 *Total Estimado: $${totalPrice.toFixed(2)}*`;
     message += "\n\nQuedo atento a la confirmación y métodos de pago.";
     window.open(`https://wa.me/${randomNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
@@ -122,7 +121,7 @@ const Menu: React.FC<MenuProps> = ({ cart, addToCart, removeFromCart, updateQuan
                       <div className="bg-white/20 px-3 py-1 rounded-lg font-bold">{cart.reduce((acc, item) => acc + item.quantity, 0)}</div>
                       <span className="font-bold text-lg">Ver Pedido</span>
                   </div>
-                  <span className="font-bold text-xl">${totalPrice}</span>
+                  <span className="font-bold text-xl">${totalPrice.toFixed(2)}</span>
               </button>
           </div>
       )}
@@ -147,7 +146,7 @@ const Menu: React.FC<MenuProps> = ({ cart, addToCart, removeFromCart, updateQuan
                       ))}
                   </div>
                   <div className="p-6 bg-zinc-900 border-t border-zinc-800 space-y-4">
-                      <div className="flex justify-between items-end"><span className="text-zinc-400 text-sm">Total Estimado</span><span className="text-4xl brand-font text-white">${totalPrice}</span></div>
+                      <div className="flex justify-between items-end"><span className="text-zinc-400 text-sm">Total Estimado</span><span className="text-4xl brand-font text-white">${totalPrice.toFixed(2)}</span></div>
                       <button onClick={handleCheckout} className="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-green-900/20"><ShoppingBag size={20} /> Enviar Pedido por WhatsApp</button>
                   </div>
               </div>
