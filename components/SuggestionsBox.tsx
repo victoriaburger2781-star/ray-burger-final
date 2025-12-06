@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Lightbulb, Send, MessageSquare, ThumbsUp, Heart } from 'lucide-react';
-// IMPORTAMOS LOS NÚMEROS DESDE TU ARCHIVO DE CONTROL
 import { WHATSAPP_NUMBERS } from '../data/menuData';
 
 const SuggestionsBox: React.FC = () => {
@@ -40,11 +39,7 @@ const SuggestionsBox: React.FC = () => {
         </div>
         <div className="p-6">
             <div className="mb-6 text-center">
-                {activeTab === 'IMPROVE' ? (
-                    <div className="bg-zinc-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3"><MessageSquare size={32} className="text-white" /></div>
-                ) : (
-                    <div className="bg-orange-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3"><Heart size={32} className="text-orange-500 animate-pulse" /></div>
-                )}
+                {activeTab === 'IMPROVE' ? (<div className="bg-zinc-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3"><MessageSquare size={32} className="text-white" /></div>) : (<div className="bg-orange-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3"><Heart size={32} className="text-orange-500 animate-pulse" /></div>)}
                 <h3 className="text-xl font-bold text-white mb-1">{activeTab === 'IMPROVE' ? '¿Qué podemos mejorar?' : 'Crea tu Hamburguesa'}</h3>
                 <p className="text-xs text-zinc-400 max-w-xs mx-auto">{activeTab === 'IMPROVE' ? 'Cuéntanos tu experiencia, quejas o felicitaciones. Te leemos directamente.' : '¿Tienes una combinación loca en mente? Si a muchos les gusta, ¡la haremos realidad!'}</p>
             </div>
