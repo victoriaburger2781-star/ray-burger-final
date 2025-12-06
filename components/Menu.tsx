@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Star, ShoppingBag, Clock, Sparkles, Plus, Minus, ShoppingCart, X } from 'lucide-react';
 import { CartItem } from '../types';
-// Importamos los datos desde tu nuevo archivo de control
+// AQUÍ IMPORTAMOS TUS DATOS DEL NUEVO ARCHIVO
 import { WHATSAPP_NUMBERS, WEEKLY_SPECIAL, MENU_ITEMS, CATEGORIES } from '../data/menuData';
 
 interface MenuProps {
