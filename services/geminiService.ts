@@ -1,7 +1,6 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { BurgerRecommendation } from "../types";
 
-// CORRECCIÓN CRÍTICA: Usamos import.meta.env
 const getApiKey = () => import.meta.env.VITE_API_KEY || "";
 
 export const getBurgerRecommendation = async (mood: string): Promise<BurgerRecommendation | null> => {
