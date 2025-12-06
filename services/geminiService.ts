@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { BurgerRecommendation } from "../types";
 
-// Usamos la variable de entorno estándar de Vite
+// CORRECCIÓN CRÍTICA: Usamos import.meta.env
 const getApiKey = () => import.meta.env.VITE_API_KEY || "";
 
 export const getBurgerRecommendation = async (mood: string): Promise<BurgerRecommendation | null> => {
