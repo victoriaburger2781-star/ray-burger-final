@@ -34,12 +34,33 @@ const SuggestionsBox: React.FC = () => {
 
       <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
         <div className="flex border-b border-zinc-800">
-            <button onClick={() => setActiveTab('IMPROVE')} className={`flex-1 py-4 text-sm font-bold flex items-center justify-center gap-2 transition-colors ${activeTab === 'IMPROVE' ? 'bg-zinc-800 text-white' : 'bg-transparent text-zinc-500 hover:text-zinc-300'}`}><ThumbsUp size={16} /> Mejorar Servicio</button>
-            <button onClick={() => setActiveTab('NEW_IDEA')} className={`flex-1 py-4 text-sm font-bold flex items-center justify-center gap-2 transition-colors ${activeTab === 'NEW_IDEA' ? 'bg-orange-600/20 text-orange-500' : 'bg-transparent text-zinc-500 hover:text-zinc-300'}`}><Lightbulb size={16} /> Idea de Burger</button>
+            <button
+                onClick={() => setActiveTab('IMPROVE')}
+                className={`flex-1 py-4 text-sm font-bold flex items-center justify-center gap-2 transition-colors ${
+                    activeTab === 'IMPROVE' ? 'bg-zinc-800 text-white' : 'bg-transparent text-zinc-500 hover:text-zinc-300'
+                }`}
+            >
+                <ThumbsUp size={16} />
+                Mejorar Servicio
+            </button>
+            <button
+                onClick={() => setActiveTab('NEW_IDEA')}
+                className={`flex-1 py-4 text-sm font-bold flex items-center justify-center gap-2 transition-colors ${
+                    activeTab === 'NEW_IDEA' ? 'bg-orange-600/20 text-orange-500' : 'bg-transparent text-zinc-500 hover:text-zinc-300'
+                }`}
+            >
+                <Lightbulb size={16} />
+                Idea de Burger
+            </button>
         </div>
+
         <div className="p-6">
             <div className="mb-6 text-center">
-                {activeTab === 'IMPROVE' ? (<div className="bg-zinc-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3"><MessageSquare size={32} className="text-white" /></div>) : (<div className="bg-orange-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3"><Heart size={32} className="text-orange-500 animate-pulse" /></div>)}
+                {activeTab === 'IMPROVE' ? (
+                    <div className="bg-zinc-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3"><MessageSquare size={32} className="text-white" /></div>
+                ) : (
+                    <div className="bg-orange-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3"><Heart size={32} className="text-orange-500 animate-pulse" /></div>
+                )}
                 <h3 className="text-xl font-bold text-white mb-1">{activeTab === 'IMPROVE' ? '¿Qué podemos mejorar?' : 'Crea tu Hamburguesa'}</h3>
                 <p className="text-xs text-zinc-400 max-w-xs mx-auto">{activeTab === 'IMPROVE' ? 'Cuéntanos tu experiencia, quejas o felicitaciones. Te leemos directamente.' : '¿Tienes una combinación loca en mente? Si a muchos les gusta, ¡la haremos realidad!'}</p>
             </div>
