@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Star, ShoppingBag, Clock, Sparkles, Plus, Minus, ShoppingCart, X } from 'lucide-react';
 import { CartItem } from '../types';
+// CORRECCIÓN: Usamos ../data/menuData en lugar de @/data/menuData
 import { WHATSAPP_NUMBERS, WEEKLY_SPECIAL, MENU_ITEMS, CATEGORIES } from '../data/menuData';
 
 interface MenuProps {
